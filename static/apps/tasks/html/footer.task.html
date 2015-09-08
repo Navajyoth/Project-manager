@@ -1,0 +1,14 @@
+  <div class="end">
+    <a ui-sref="user({userId:{{'taskUser.id'}}})" class="user" ng-show="showUser">
+      <i class="fa fa-user" style="color:{{colors[taskUser.id%12]}}"></i> 
+      {{taskUser.name}}
+    </a>
+
+    <a ui-sref="project({projectId:{{'task.project'}}})" 
+       class="user" ng-show="showProject">
+      <i class="fa fa-rocket" style="color:{{colors[task.project%12]}}"></i> {{task.project_name}}</a>
+    <div class="times">
+      <div ng-repeat="t in times" ng-show="task[t]">&nbsp;&nbsp;{{t[0]}}:{{task[t]}}H</div>
+    </div>
+  </div>
+

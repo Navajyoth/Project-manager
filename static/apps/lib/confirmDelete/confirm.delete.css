@@ -1,0 +1,42 @@
+.no-padding{
+	padding: 0px !important;
+}
+
+.cnf-icon-box{
+	background-color: #e74c3c; 
+	padding: 3.5px;
+	color: #000000;
+}
+.cnf-left, .cnf-right {
+	background-color: #e74c3c;
+	width:3px! important;
+	margin-left: -3px;
+	padding: 3px;
+	font-size: 1em;
+}
+
+.cnf-left{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.cnf-right{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.cnf-inner-icon{
+	background: #666666;
+	width:0%;
+	margin-left: -3px;
+	padding: 0px;
+	color: #FFFFFF;
+	-webkit-transition: width 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+}
+.cnf-container:hover .cnf-inner-icon{
+	width: 30%;
+	padding: 2px;
+
+}

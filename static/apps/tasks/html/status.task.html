@@ -1,0 +1,29 @@
+<div class="row foot">
+<div class="col-md-6" ng-hide="showNext">
+  <a ng-show="taskHrcy[task.status].prev" class="mv-link" ng-click="move('prev')"><i class="fa fa-angle-double-left"></i> {{taskHrcy[task.status].prev}}</a>
+</div>
+<!-- navigate to next state -->
+<div class="col-md-6 ta-r" ng-hide="showNext">
+  <div ng-hide="taskHrcy[task.status].timeField" title="Change task status">
+    <a class="mv-link" ng-click="move('next')" ng-show="taskHrcy[task.status].next">{{taskHrcy[task.status].next}} <i class="fa fa-angle-double-right"></i></a>
+  </div>
+  <div ng-show="taskHrcy[task.status].timeField" title="Change task status">
+    <a class="mv-link" ng-click="showNext=true">{{taskHrcy[task.status].next}} <i class="fa fa-angle-double-right"></i></a>
+  </div>
+</div>
+<form class="estimate" ng-show="showNext" ng-submit="move('next')" class="col-md-12">
+  <input type="number" ng-model="task[taskHrcy[task.status].timeField]" step=".5" min="0" max="60.0"
+                       placeholder="{{taskHrcy[task.status].timeText}} in Hrs" required>
+  <button type="submit"><i class="fa fa-angle-double-right"></i></button>
+  <label><input type="checkbox" required>I have tested it manually</label>
+  <div class="hint" ng-show="task.status=='backlog'">
+    <div>Don't worry too much about this. This is for you to:</div>
+    <ul>
+      <li>confirm your clarity on the task, resulting in lesser work & rework <i class="fa fa-smile-o"></i></li>
+      <li>self-assess & set a target for self so that you can compete with yourself and better self <i class="fa fa-thumbs-o-up"></i></li>
+    </ul>
+  </div>
+</form>
+<!-- end navigate to next state -->
+</div>
+

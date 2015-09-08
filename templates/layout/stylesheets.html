@@ -1,0 +1,14 @@
+{% load compress%}
+{% load staticfiles %}
+
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/font-awesome/css/font-awesome.css' %}"/>
+{# <link rel="stylesheet" type="text/css" href="{% static 'bower_components/bootstrap-material-design/dist/css/material-wfont.css' %}"/> #}
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-toastr/dist/angular-toastr.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular/angular-csp.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-busy/angular-busy.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'apps/lib/confirmDelete/confirm.delete.css' %}"/>
+
+<link rel="stylesheet" type="text/x-scss" href="{% static 'sass/style.scss' %}"/>
+{% endcompress %}

@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>{% block title %} {% endblock %} | RDT</title>
+  {% include 'layout/stylesheets.html' %}
+</head>
+
+<body>
+<div id="wrapper" style="text-align:center;">
+  <br> <br> <br> <img src="/static/img/logo.png" alt=""> <br> <hr>
+  
+  <div id="main" class="container">
+    {% include 'layout/messages.html' %}
+    {% block content %} {% endblock %}
+  </div>
+</div>
+{% include 'layout/javascripts.html'%}
+</body>
+</html>
+

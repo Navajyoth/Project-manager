@@ -1,0 +1,10 @@
+  <ul class="commits">
+    <li ng-repeat="c in task.commits" ng-hide="c.deleted">
+      <a ng-click="deletecommit(c)" class="delete"><i class="fa fa-times-circle"></i></a>
+      <a ng-href="{{c.url}}" target="_blank" class="url">{{c.url}}</a>
+    </li>
+    <li class="add">
+      <a ng-click="addCommit()"><i class="fa fa-plus-circle"></i> Commit</a>    
+    </li>
+  </ul>
+

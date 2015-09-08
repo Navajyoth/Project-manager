@@ -1,0 +1,11 @@
+<div class="tasks col-md-2 w-20p list-group" ng-repeat="s in usrtsk.statusOptions">
+<div class="status">{{s}}</div>
+<div class="full-len-scroll">
+  <task 
+     show-project="true" 
+     show-status="true"
+     show-edit="true"
+     show-Notify="lc.user.is_manager"
+     ng-repeat="t in usrtsk.tasks | statusFilter:s" task="t"></task>
+</div>
+</div>

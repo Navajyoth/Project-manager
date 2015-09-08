@@ -1,0 +1,11 @@
+<div class="projects row">
+  <div ui-sref="project({projectId:{{'p.id'}}})" class="col-md-3" ng-repeat="p in allprj.projects">
+    <div class="head">{{p.name}}</div>
+    <div class="row">
+      <div class="col-md-6 status" ng-repeat="s in allprj.statusList" 
+        ng-show="p[s]"><div class="cnt">{{p[s]}}</div>
+        <span>{{s}}</span
+      </div>
+    </div>
+  </div>
+</div>

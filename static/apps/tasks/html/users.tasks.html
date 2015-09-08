@@ -1,0 +1,50 @@
+<div class="row" id="users-tasks">
+<div class="col-md-2 backlog">
+  <div class="tasks list-group">
+   <div class="status">Unassigned</div>
+   
+   <ul dnd-list="usrstsk.tasks" dnd-inserted="usrstsk.setUser({},item,type)" style="list-style-type: none;padding:0px;" class="col-xs-12">
+
+      <li ng-repeat="t in usrstsk.tasks | taskUserFilter:null"
+          dnd-draggable="t"
+          dnd-type="t"
+          >
+        <task show-project="true" show-edit="true" task="t"></task>
+      </li>
+      <li class="dndPlaceholder">
+          Drop here..
+        </li>
+      <li>
+        &nbsp;<br>
+        &nbsp;<br>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-md-10 row users">
+  <div
+     class="user-tasks col-md-2 list-group" ng-repeat="u in usrstsk.users">
+    <div class="ctnr">
+      <a ui-sref="user({userId:{{'u.id'}}})" class="list-head" >{{u.name}}</a>
+      <ul dnd-list="usrstsk.tasks" dnd-inserted="usrstsk.setUser(u,item,type)" style="list-style-type: none;padding:0px;" class="col-xs-12">
+        <li dnd-draggable="t"
+            dnd-type="t"
+            class="list-group-item item {{t.status}}" 
+            ng-repeat="t in usrstsk.tasks | taskUserFilter:u.id | orderBy:'status'">
+          <a ng-href="/admin/tasks/task/{{t.id}}" target="_blank">
+            {{t.title}} 
+          </a>
+        </li>
+        <li>
+        &nbsp;<br>
+        &nbsp;<br>
+        </li>
+        <li class="dndPlaceholder">
+          Drop here..
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

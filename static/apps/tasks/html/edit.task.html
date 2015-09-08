@@ -1,0 +1,12 @@
+<form ng-submit="upsert()" ng-show="edit">
+  <input class="form-control empty" type="text" ng-model="task.title" placeholder="Task Title" required>
+  <!-- <textarea class="form&#45;control empty" type="text" ng&#45;model="task.title" placeholder="Task Title" required>></textarea> -->
+  <textarea class="form-control empty" ng-model="task.description" placeholder="Task Description"></textarea>
+  <select class="form-control empty" ng-model="taskUser" ng-options="u.name for u in users"></select>
+  <div class="row">
+    <a class="col-md-3 button" ng-click="cancel()">Cancel</a>
+    <!-- <confirm-delete class="col-md-3 button" ></confirm-delete> -->
+    <button type="submit" class="col-md-6 button ta-r">Save</a>
+  </div>
+</form>
+

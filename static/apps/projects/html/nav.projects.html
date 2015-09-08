@@ -1,0 +1,12 @@
+<div class="head nav">
+<div class="row items">
+  <div class="col-md-2 wrap item" ng-repeat="p in navprj.projects" ui-sref-active="active" ui-sref="project({projectId:{{'p.id'}}})">{{p.name}}
+  </div>
+</div>
+</div>
+<!-- <div class="name"><i class="fa fa&#45;rocket"></i> {{navprj.project.name}}</div> -->
+<!-- <ul class="items"> -->
+<!--   <li><a ng&#45;click="navprj.move(&#45;1)"><i class="fa fa&#45;chevron&#45;left"></i></a></li> -->
+<!--   <li ng&#45;repeat="p in navprj.projects" ui&#45;sref&#45;active="active" class="proj wrap" ui&#45;sref="project({projectId:{{'p.id'}}})">{{p.name}}</li> -->
+<!--   <li><a ng&#45;click="navprj.move(1)"><i class="fa fa&#45;chevron&#45;right"></i></a></li> -->
+<!-- </ul> -->

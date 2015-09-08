@@ -1,0 +1,44 @@
+<div class="task list-group-item" ng-class="{assigned: task.user}">
+<div ng-hide="edit">
+  <div class="tools">
+    <a ng-click="edit=true" ng-show="showEdit" title="Edit Task"><i class="edit fa fa-pencil-square-o"></i></a>
+    <a ng-show="showNotify" ng-click="notify()" title="Send Notification"><i class="notify fa fa-bell-o"></i></a>
+  </div>
+  
+  <h5 class="title" ng-click="showDetails=!showDetails"><i class="fa fa-flag {{task.priority}}"></i>
+{{task.title}} 
+    <span ng-hide="showDetails || !task.description">...</span>
+  </h5>
+  <div ng-show="showDetails">
+    <pre>{{task.description}}</pre>
+  </div>
+  <div 
+    ng-include="'/static/apps/tasks/html/status.task.html'" 
+    ng-show="task.status=='review' || task.status==='complete' || showStatus"></div>
+
+  <div ng-include="'/static/apps/tasks/html/footer.task.html'"></div>
+  <div 
+    ng-include="'/static/apps/tasks/html/commits.task.html'"
+    ng-show="task.status==='review' || task.status==='complete'"></div>
+
+</div>
+<form ng-submit="upsert()" ng-show="edit">
+  <input class="form-control empty" type="text" ng-model="task.title" placeholder="Task Title" required>
+  <!-- <textarea class="form&#45;control empty" type="text" ng&#45;model="task.title" placeholder="Task Title" required>></textarea> -->
+  <textarea class="form-control empty" ng-model="task.description" placeholder="Task Description"></textarea>
+  <select class="form-control empty" ng-model="taskUser" ng-options="u.name for u in users"></select>
+  <select class="form-control empty" ng-model="task.priority" ng-options="prior for prior in priorityOpts"></select>
+  <textarea class="form-control empty" ng-model="task.review_comments" placeholder="Task Reviews"></textarea>
+  <div class="row">
+
+    <div class="col-md-4 button">
+      <confirm-delete on-confirm="callBackhere()"></confirm-delete>
+    </div>
+    
+    <a class="col-md-4 button" ng-click="cancel()">Cancel</a>
+
+    <button type="submit" class="col-md-4 button ta-r">Save</a>
+  </div>
+</form>
+</div>
+

@@ -1,0 +1,16 @@
+<!-- <div>{{pctrl.project.name}}</div> -->
+<a class="btn btn-fab btn-raised btn-primary btn-add" ng-click="pctrl.addTask()">
+  <span>+</span>
+</a>
+<div class="row project" ng-dblclick="pctrl.addTaskModal()">
+  <div class="tasks col-md-2 w-20p list-group" ng-repeat="s in pctrl.statusOptions">
+    <div class="status">{{s}}</div>
+    <div class="full-len-scroll">
+      <task 
+         show-edit="true" 
+         show-user="true" 
+         show-Notify="lc.user.is_manager"
+         ng-repeat="t in pctrl.tasks | statusFilter:s" task="t"></task>
+    </div>
+  </div>
+</div>
